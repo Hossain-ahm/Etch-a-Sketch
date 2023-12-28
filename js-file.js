@@ -1,17 +1,36 @@
 const gridContainer = document.getElementById('grid-container');
+const button = document.getElementById("btn")
 
-for (let i = 0; i < 16 * 16; i++) {
- const gridItem = document.createElement('div');
- gridItem.classList.add('grid-item');
- //gridItem.textContent = i +1
- gridContainer.appendChild(gridItem);
-}
+makeGrid(16)
 
-for (let item of gridContainer.childNodes){
+button.addEventListener("click", () =>{
+    let input = prompt("dimensions: ")
+    if (input <= 100){
+        while (gridContainer.firstChild) {
+            gridContainer.removeChild(gridContainer.firstChild);
+        }
+        makeGrid(input)
+
+
+    }
+})
+
+function hover(item){
     item.addEventListener("mouseover", (event) =>{
         event.target.style.backgroundColor = "blue"
     })
     item.addEventListener("mouseout", (event) =>{
         event.target.style.backgroundColor = "#eee"
     })
+}
+
+function makeGrid(dimension){
+    for (let i = 0; i < dimension * dimension; i++) {
+        const gridItem = document.createElement('div');
+        gridItem.style.width = Math.floor(gridContainer.offsetWidth/dimension) +"px"
+        gridItem.style.height = Math.floor(gridContainer.offsetWidth/dimension) +"px"
+        gridItem.classList.add('grid-item');
+        gridContainer.appendChild(gridItem);
+        hover(gridItem)
+    }
 }

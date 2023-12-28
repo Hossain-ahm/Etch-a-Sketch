@@ -2,12 +2,11 @@
     display: flex;
     flex-wrap: wrap;
     width: 640px;
-
+    margin-top: 20px;
 
    }
 .grid-item {
-    width: 40px;
-    height: 40px;
+
     background-color: #eee;
     outline: 1px solid blue;
    }
