@@ -10,8 +10,6 @@ button.addEventListener("click", () =>{
             gridContainer.removeChild(gridContainer.firstChild);
         }
         makeGrid(input)
-
-
     }
 })
 
