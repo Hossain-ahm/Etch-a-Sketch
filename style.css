@@ -10,10 +10,3 @@
     background-color: #eee;
     outline: 1px solid blue;
    }
-#test1 {
-    width: 250px;
-    height: 250px;
-    background: yellow;
-    outline: 5px solid blue;
-    outline-offset: -5px;
-   }
